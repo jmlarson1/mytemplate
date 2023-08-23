@@ -1,0 +1,4 @@
+[run]
+source = mytemplate
+relative_files = True
+
