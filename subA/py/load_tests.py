@@ -18,14 +18,12 @@ def load_tests(loader, suite, pattern):
         suite - test suite being built at the time of call to this function
         pattern - ignored
     """
-    here_dir = Path(__file__).resolve().parent
-    subpkg_root = here_dir.parent
-    start_dir = here_dir.joinpath("tests")
+    start_dir = Path(__file__).resolve().parent.joinpath("tests")
 
     print(f"Discover tests in {start_dir}")
 
     pkg_tests = loader.discover(start_dir=str(start_dir), \
-                                top_level_dir=str(subpkg_root), \
+                                top_level_dir=str(start_dir), \
                                 pattern="Test*.py")
     suite.addTests(pkg_tests)
 
