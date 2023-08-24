@@ -1,4 +1,4 @@
 [run]
 source = mytemplate
-relative_files = True
+relative_files = False
 
