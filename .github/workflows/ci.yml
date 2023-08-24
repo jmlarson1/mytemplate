@@ -31,13 +31,22 @@ jobs:
         echo
         pip list
 
+    # Main test step is full test suite run on installed package with no
+    # coverage
     - name: Test mytemplate python package
       run: |
-        tox -r
+        tox -r -e nocoverage
 
+    # Coverage is full test suite run on local clone so that coveralls
+    # has nice output.  Generate html report to export as artifact.
     - name: Generate coverage for coveralls
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        tox -r -e coverage,coveralls
+        tox -r -e coverage,coveralls,report
 
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: htmlcov
