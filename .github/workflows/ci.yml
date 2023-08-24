@@ -37,6 +37,9 @@ jobs:
       run: |
         tox -r -e nocoverage
         ls -lart
+        ls -lart .tox
+        ls -lart .tox/.pkg
+        ls -lart .tox/.pkg/dist
 
     - name: Archive tested distributions
       uses: actions/upload-artifact@v3
