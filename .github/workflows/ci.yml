@@ -36,6 +36,8 @@ jobs:
         tox -r
 
     - name: Generate coverage for coveralls
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         tox -r -e coverage,coveralls
 
