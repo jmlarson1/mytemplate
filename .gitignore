@@ -1,7 +1,8 @@
 **/__pycache__
 
-.coverage
-.coverage_html
+mytemplate_pypkg/.coverage
+mytemplate_pypkg/htmlcov
 
-dist
-src/mytemplate.egg-info
+mytemplate_pypkg/dist
+mytemplate_pypkg/build
+mytemplate_pypkg/src/mytemplate.egg-info
