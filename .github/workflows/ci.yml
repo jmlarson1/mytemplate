@@ -14,14 +14,21 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Setup python with tox
       run: |
-        which python
-        python --version
         python -m pip install --upgrade pip
-        which pip
-        pip --version
         pip install --upgrade setuptools
         pip install wheel
         pip install tox
+        echo
+        which python
+        which pip
         which tox
+        echo
+        python --version
+        pip --version
         tox --version
+        echo
+        pip list
+    - name: Test 
+      run: |
+        tox -r
 
