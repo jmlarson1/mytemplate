@@ -45,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: tested-python-packages
-        path:
+        path: |
             .tox/.pkg/dist/mytemplate-*.whl
             .tox/.pkg/dist/mytemplate-*.tar.gz
 
