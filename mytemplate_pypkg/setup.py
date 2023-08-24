@@ -48,7 +48,7 @@ setup(
     long_description_content_type="text/markdown",
     python_requires=python_requires,
     install_requires=install_requires,
-    keywords="Nonlinear Regression Optimization",
+    keywords="My Template Stuff",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         #        'License :: OSI Approved :: MIT License',
