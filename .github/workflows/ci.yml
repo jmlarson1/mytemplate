@@ -36,6 +36,7 @@ jobs:
     - name: Test mytemplate python package
       run: |
         tox -r -e nocoverage
+        ls -lart
 
     - name: Archive tested distributions
       uses: actions/upload-artifact@v3
