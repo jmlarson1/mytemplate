@@ -12,8 +12,16 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Check python
+    - name: Setup python with tox
       run: |
         which python
         python --version
+        python -m pip install --upgrade pip
+        which pip
+        pip --version
+        pip install --upgrade setuptools
+        pip install wheel
+        pip install tox
+        which tox
+        tox --version
 
