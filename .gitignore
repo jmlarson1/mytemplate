@@ -4,10 +4,12 @@
 .coverage_mytemplate
 mytemplate_pypkg/htmlcov
 
+mytemplate_pypkg/.tox
 mytemplate_pypkg/dist
 mytemplate_pypkg/build
 mytemplate_pypkg/src/mytemplate.egg-info
 
+mytemplate2_pypkg/.tox
 mytemplate2_pypkg/dist
 mytemplate2_pypkg/build
 mytemplate2_pypkg/src/mytemplate2.egg-info
