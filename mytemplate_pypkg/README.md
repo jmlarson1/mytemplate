@@ -73,7 +73,7 @@ The following commands can be run from the directory that contains this file.
   * Generate a report and an HTML report for the package's full test suite
 * `tox -r -e black`
   * This is likely only useful for developers working on a local clone
-  * Apply `black` to all files in the package for cleaning/standardization
+  * Apply `black` to all files in the package for cleaning/standardization who want to diff the changes made by `black` before committing
   * This should __never__ be included as default `tox` work since it could alter uncommitted code under active development
 
 In the interest of aiding developers, running `tox` or `tox -r` will only carry out the nocoverage work.
