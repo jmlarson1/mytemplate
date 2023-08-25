@@ -42,7 +42,7 @@ setup(
     package_data=package_data,
     url="https://mytemplate2.org",
     project_urls=project_urls,
-    license="???",
+    license="MIT"
     description="Personal, custom tools for stuff",
     long_description=readme_md(),
     long_description_content_type="text/markdown",
@@ -51,7 +51,7 @@ setup(
     keywords="My Template2 Stuff",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
-        #        'License :: OSI Approved :: MIT License',
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
         "Intended Audience :: Science/Research",
         "Natural Language :: English",
