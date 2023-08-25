@@ -42,7 +42,7 @@ setup(
     package_data=package_data,
     url="https://mytemplate2.org",
     project_urls=project_urls,
-    license="MIT"
+    license="MIT",
     description="Personal, custom tools for stuff",
     long_description=readme_md(),
     long_description_content_type="text/markdown",
