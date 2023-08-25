@@ -1,6 +1,7 @@
 **/__pycache__
 
-mytemplate_pypkg/.coverage_mytemplate
+.coverage
+.coverage_mytemplate
 mytemplate_pypkg/htmlcov
 
 mytemplate_pypkg/dist
