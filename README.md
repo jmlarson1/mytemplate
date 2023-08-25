@@ -44,7 +44,7 @@ satisify the following requirements
   to use the code via installation with pip and without having to clone the repository.
 * The repository shall be setup so that all tests in the repository regardless
   of language can be run via a [GitHub CI Action](https://github.com/jared321/mytemplate/blob/main/.github/workflows/github-action-ci.yml)
-  and potentially through a private build servers.
+  and potentially through private build servers.
 * The repository shall be setup so that coverage of all code in python packages
   can be determined as a single coverage result with coverage results published as
   [GitHub Action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793).
