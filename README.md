@@ -138,3 +138,4 @@ Note that `tox` will correctly and automatically run `aggregrate` before the oth
 * Add in `flake8` and `mypy`
 * Add in other checks as needed/desired
 * Add in `black` as a pre-commit action
+* Add in test data files and package data
