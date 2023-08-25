@@ -9,57 +9,63 @@ General Information
 ===================
 
 This repository is a template and testbed for setting up new repositories in the
-POptUS organization.  All such repositories should satisify the following
-requirements
+[POptUS organization](https://github.com/POptUS).  All such repositories should
+satisify the following requirements
 
-* Each distinct tool to be included in the repository shall (e.g., `subA`,
-  `subB`) be included in the root of the repository in a folder named after the
+* Each distinct tool to be included in the repository shall (e.g., [subA](https://github.com/jared321/mytemplate/tree/main/subA),
+  [subB](https://github.com/jared321/mytemplate/tree/main/subB)) be included in the root of the repository in a folder named after the
   tool.
 * Each implementation of a tool shall be included in a dedicated folder in the
   tool's main folder with its name adhering to the convention
-  * `m` - for MATLAB implementations
-  * `py` - for Python implementations
+  * `m` - for MATLAB implementations (e.g., [subA/m](https://github.com/jared321/mytemplate/tree/main/subA/m))
+  * `py` - for Python implementations (e.g., [subA/py](https://github.com/jared321/mytemplate/tree/main/subA/py))
 * This repository shall be setup so that it can host as many python packages as
-  desired (e.g., `mytemplate_pypkg` and `mytemplate2_pypkg`).  The python code
-  to be included in a package shall *not* be developed directly within the
+  desired (e.g., [mytemplate_pypkg](https://github.com/jared321/mytemplate/tree/main/mytemplate_pypkg) and
+  [mytemplate2_pypkg](https://github.com/jared321/mytemplate/tree/main/mytemplate2_pypkg)).  The python code
+  to be included in a package shall __not__ be developed directly within the
   python package's folder hierarchy, but rather in accord with the above
-  requirements.  Inclusion within the pacakge shall be accomplished by symlinks
-  (e.g., `mytemplate_pypkg/src/mytemplate/subA`).
-* All python packages shall be structured in accord with the src-layout, but
-  with tests in the package (e.g., `mytemplate_pypkg/src/mytemplate/tests`)
-* All python packages shall provide access to their version (semantic
-  versioning) information via the command `<pacakge>.__version__`.
+  requirements.  Inclusion within the package shall be accomplished by symlinks
+  (e.g., [mytemplate_pypkg/src/mytemplate/subA](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/src/mytemplate/subA)).
+* All python packages shall be structured in accord with the src-layout,
+  with tests in the package (e.g., [mytemplate_pypkg/src/mytemplate/tests](https://github.com/jared321/mytemplate/tree/main/mytemplate_pypkg/src/mytemplate/tests) and
+  [mytemplate_pypkg/src/mytemplate/subA/tests](https://github.com/jared321/mytemplate/tree/main/subA/py/tests))
+* All python packages shall provide access to their version ([semantic versioning](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/?highlight=version#semantic-versioning-preferred))
+  information via the command `<package>.__version__`.
 * All python packages shall have integrated automatic unit testing that can be
-  run within python via the command `<pacakge>.test()`.
+  run within python via the command `<package>.test()`.
 * Users of the code in the repository shall be able to use the code correctly by
   cloning the repository and setting appropriate path variables correctly based
   on the languages of each tool that they plan to use.
-* All public python packages shall be uploaded to PyPi so that users can choose
+* All public python packages shall be uploaded to [PyPi](https://pypi.org) so that users can choose
   to use the code without having to clone the repository.
 * The repository shall be setup so that all tests in the repository regardless
-  of language can be run via a GitHub CI Action and potentially through an
-  private build servers.
+  of language can be run via a [GitHub CI Action](https://github.com/jared321/mytemplate/blob/main/.github/workflows/github-action-ci.yml)
+  and potentially through a private build servers.
 * The repository shall be setup so that coverage of all code in python packages
-  can be determined as a single coverage result with coverage results published
-  as GitHub Action artifacts and via coverage web server interfaces (e.g.,
-  Coveralls).
+  can be determined as a single coverage result with coverage results published as
+  [GitHub Action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793).
+  and via coverage web server interfaces (e.g.,[Coveralls](https://coveralls.io/github/jared321/mytemplate)).
+* The repository shall be setup so that tested distributions of all python packages are available as
+  [GitHub Action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793).
 
 Developer Information
 =====================
 
 The python packages in this repository and the management of coverage reports
-for the full repository are managed with tox, which can be used for CI work.
-However, the same tox setups can be used be developers if so desired.  This can
-be useful since `tox` will automatically setup and manage dedicated virtual
-environments for the developer.  The following guide can be used to setup tox on
-an individual platform and is based on the XXX.
+for the full repository are managed with [tox](https://tox.wiki/en/latest/index.html),
+which can be used for CI work.  However, the same `tox` setups can be used be developers
+if so desired.  This can be useful since `tox` will automatically setup and manage dedicated virtual
+environments for the developer.  The following guide can be used to setup `tox` on
+an individual platform and is based on the a [webinar](https://www.youtube.com/watch?v=PrAyvH-tm8E)
+by Oliver Bestwalter.  I appreciate his solution as there is no need to activate any virtual environment in order to use `tox`.
 
 Developers that would like to use `tox` should learn about the tool so that, in
 particular, they understand the difference between running `tox` and `tox -r`.
 
 Create a python virtual environment based on a desired python dedicated to
-hosting tox
+hosting `tox`
 ```
+$ cd
 $ deactivate
 $ /path/to/desired/python --version
 $ /path/to/desired/python -m venv $HOME/.toxbase
@@ -83,7 +89,8 @@ $ tox --version
 ```
 
 For information on using `tox` with a particular python package refer to the
-`README.md` in the root folder of each package.
+`README.md` in the root folder of each package (e.g.,
+[mytemplate_pypkg](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/README.md)).
 
 Using `tox` for Global Coverage Tasks
 =====================================
