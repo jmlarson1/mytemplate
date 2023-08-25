@@ -15,7 +15,7 @@ $ which python
 $ python --version
 $ which pip
 $ pip --version
-$ pip install mytemplate
+$ pip install --upgrade mytemplate
 $ pip list
 ```
 
@@ -24,7 +24,10 @@ This method might be useful to developers for testing/debugging or power users w
 * Click on the [GitHub Action](https://github.com/jared321/mytemplate/actions) associated with the commit whose package version is to be installed
 * Download the artifacts of the python package to install
 * Extract the artifact and confirm that it contains distributions (`*.tar.gz` is a [source distribution](https://packaging.python.org/en/latest/flow/#the-source-distribution-sdist); `*.whl` is a [pre-built distribution](https://packaging.python.org/en/latest/flow/#the-built-distributions-wheels)) and choose which to install
-* `pip install --upgrade </path/to/distribution to install>`
+```
+$ pip install --upgrade </path/to/distribution to install>
+$ pip list
+```
 
 #### Manual source distribution installation via [setuptools](https://setuptools.pypa.io/en/latest/index.html)
 This method might be useful for developers.
@@ -32,7 +35,8 @@ This method might be useful for developers.
 * Test manually with python or `tox`
 ```
 $ python setup.py sdist
-$ python dist/mytemplate-<version>.tar.gz
+$ python install --upgrade dist/mytemplate-<version>.tar.gz
+$ pip list
 ```
 
 #### Installation Testing
