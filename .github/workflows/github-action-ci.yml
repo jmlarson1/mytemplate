@@ -55,7 +55,6 @@ jobs:
       run: |
         pushd mytemplate_pypkg
         tox -r -e coverage,coveralls,report
-        mv .coverage ..
         popd
 
     - name: Archive code coverage results
