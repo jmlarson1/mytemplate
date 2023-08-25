@@ -133,3 +133,8 @@ Note that `tox` will correctly and automatically run `aggregrate` before the oth
 * Add in all subpackage implementations as symlinks in the correct subdirectory
 * Incorporate the package into the [GitHub CI Action](https://github.com/jared321/mytemplate/blob/main/.github/workflows/github-action-ci.yml)
 * Commit, push, and check associated GitHub CI Action log to see if constructed and integrated correctly
+
+## TODO
+* Add in `flake8` and `mypy`
+* Add in other checks as needed/desired
+* Add in `black` as a pre-commit action
