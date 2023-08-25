@@ -27,7 +27,7 @@ All such repositories should satisify the following requirements
   (e.g., [mytemplate_pypkg/src/mytemplate/subA](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/src/mytemplate/subA)).
 * All python packages shall be structured in accord with the [src-layout](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#src-layout),
   with tests in the package (e.g., [mytemplate_pypkg/src/mytemplate/tests](https://github.com/jared321/mytemplate/tree/main/mytemplate_pypkg/src/mytemplate/tests) and
-  [mytemplate_pypkg/src/mytemplate/subA/tests](https://github.com/jared321/mytemplate/tree/main/subA/py/tests))
+  [mytemplate_pypkg/src/mytemplate/subA/tests](https://github.com/jared321/mytemplate/tree/main/subA/py/tests)).  Detailed information for src layout [here](https://blog.ionelmc.ro/2014/05/25/python-packaging/).
 * All python packages shall provide access to their version ([semantic versioning](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/?highlight=version#semantic-versioning-preferred))
   information via the command `<package>.__version__`.  See discussion
   [here](https://packaging.python.org/guides/single-sourcing-package-version/#single-sourcing-the-version) for options.
