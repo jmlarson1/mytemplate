@@ -55,6 +55,7 @@ jobs:
       run: |
         pushd mytemplate_pypkg
         tox -r -e coverage,coveralls,report
+        mv .coverage ..
         popd
 
     - name: Archive code coverage results
@@ -62,5 +63,5 @@ jobs:
       with:
         name: code-coverage-report
         path: |
-            mytemplate_pypkg/.coverage
+            .coverage
             mytemplate_pypkg/htmlcov
