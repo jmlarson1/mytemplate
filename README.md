@@ -36,7 +36,7 @@ satisify the following requirements
   [setup.py](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/setup.py)
   and [`__init__.py`](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/src/mytemplate/__init__.py). 
 * All python packages shall have integrated automatic unit testing that can be
-  run within python via the command `<package>.test()`.
+  run within python via the command `<package>.test()` so that actual installations can be tested and test results can be recorded in jupyter notebooks for traceability.
 * Users of the code in the repository shall be able to use the code correctly by
   cloning the repository and setting appropriate path variables correctly based
   on the languages of each tool that they plan to use.
