@@ -1,11 +1,41 @@
-A template python package for exploring what tools I want and how to use them.
+A template python package for building in dedicated python functionality as well as combining subA and subB tools,
+which we are assume share some important commonality, via symlinks.  A concrete example of this package is
+[ibcdfo_pypkg](https://github.com/POptUS/IBCDFO/tree/main/ibcdfo_pypkg).
 
 ## Installation Instructions
+There should be at least three options for installing this package.
 
-#### Generic installations
+#### pip install via [PyPi](https://pypi.org)
+This is the preferred method for users who prefer pip installations over direct use of local clones.
+* __NOTE__: This package is not in PyPi and, therefore, this method cannot be executed
+* Setup the python environment that will use the package (e.g., [virtual environments](https://docs.python.org/3/library/venv.html))
+* Update `pip`, `setuptools`, and `wheel` if necessary and desired
+```
+$ which python
+$ python --version
+$ which pip
+$ pip --version
+$ pip install mytemplate
+$ pip list
+```
 
-#### Site-specific instructions
+#### pip install via downloaded [GitHub action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793)
+This method might be useful to developers for testing/debugging or power users who would like to use a specific version of the package not available through `pypi`.
+* Click on the [GitHub Action](https://github.com/jared321/mytemplate/actions) associated with the commit whose package version is to be installed
+* Download the artifacts of the python package to install
+* Extract the artifact and confirm that it contains distributions (`*.tar.gz` is a [source distribution](https://packaging.python.org/en/latest/flow/#the-source-distribution-sdist); `*.whl` is a [pre-built distribution](https://packaging.python.org/en/latest/flow/#the-built-distributions-wheels)) and choose which to install
+* `pip install --upgrade </path/to/distribution to install>`
 
+#### Manual source distribution installation via [setuptools](https://setuptools.pypa.io/en/latest/index.html)
+This method might be useful for developers.
+* `cd /path/to/mytemplate_pypkg`
+* Test manually with python or `tox`
+```
+$ python setup.py sdist
+$ python dist/mytemplate-<version>.tar.gz
+```
+
+#### Installation Testing
 Installations can be tested by running 
 ```
 $ python
@@ -13,32 +43,8 @@ $ python
 >>> mytemplate.__version__
 '1.0.1'
 >>> mytemplate.test()
+    ...
+$ python -m pydoc mytemplate
 ```
 
-Install the Default Developer Environment
-=========================================
-* Let `/path/to/python` be the python that you would like to use to build your
-  developer virtual environments.
-* Setup a functioning version of `tox`
-```
-$ deactivate
-$ /path/to/python --version
-$ /path/to/python -m venv $HOME/.toxbaseQ
-$ ./.toxbase/bin/pip list
-$ ./.toxbase/bin/python -m pip install --upgrade pip
-$ ./.toxbase/bin/pip install --upgrade setuptools
-$ ./.toxbase/bin/pip install tox
-$ ./.toxbase/bin/tox --version
-```
-* Put `tox` into path for use across all development environments that we might
-  have on our system.  In the following, please replace `.bash_profile` with the
-  appropriate shell configuration file.
-```
-$ mkdir $HOME/local/bin
-$ ln -s $HOME/.toxbase/bin/tox $HOME/local/bin/tox
-$ vi $HOME/.bash_profile (add $HOME/local/bin to PATH)
-$ source $HOME/.bash_profile
-$ which tox
-$ tox --version
-```
-
+## Development with `tox`
