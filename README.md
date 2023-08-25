@@ -30,7 +30,11 @@ satisify the following requirements
   with tests in the package (e.g., [mytemplate_pypkg/src/mytemplate/tests](https://github.com/jared321/mytemplate/tree/main/mytemplate_pypkg/src/mytemplate/tests) and
   [mytemplate_pypkg/src/mytemplate/subA/tests](https://github.com/jared321/mytemplate/tree/main/subA/py/tests))
 * All python packages shall provide access to their version ([semantic versioning](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/?highlight=version#semantic-versioning-preferred))
-  information via the command `<package>.__version__`.
+  information via the command `<package>.__version__`.  See discussion
+  [here](https://packaging.python.org/guides/single-sourcing-package-version/#single-sourcing-the-version) for options.
+  In this repo we use a dedicated [VERSION](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/VERSION) file coupled with
+  [setup.py](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/setup.py)
+  and [`__init__.py`](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/src/mytemplate/__init__.py). 
 * All python packages shall have integrated automatic unit testing that can be
   run within python via the command `<package>.test()`.
 * Users of the code in the repository shall be able to use the code correctly by
