@@ -62,5 +62,5 @@ jobs:
       with:
         name: code-coverage-report
         path: |
-            mytemplate/.coverage
+            mytemplate_pypkg/.coverage
             mytemplate_pypkg/htmlcov
