@@ -48,7 +48,7 @@ satisify the following requirements
 * The repository shall be setup so that coverage of all code in python packages
   can be determined as a single coverage result with coverage results published as
   [GitHub Action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793).
-  and via coverage web server interfaces (e.g.,[Coveralls](https://coveralls.io/github/jared321/mytemplate)).
+  and via coverage web server interfaces (e.g., [Coveralls](https://coveralls.io/github/jared321/mytemplate)).
 * The repository shall be setup so that tested distributions of all python packages are available as
   [GitHub Action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793).
 
@@ -57,7 +57,7 @@ Developer Information
 
 The python packages in this repository and the management of coverage reports
 for the full repository are managed with [tox](https://tox.wiki/en/latest/index.html),
-which can be used for CI work.  However, the same `tox` setups can be used be developers
+which can be used for CI work.  However, the same `tox` setups can be used by developers
 if so desired.  This can be useful since `tox` will automatically setup and manage dedicated virtual
 environments for the developer.  The following guide can be used to setup `tox` on
 an individual platform and is based on the a [webinar](https://www.youtube.com/watch?v=PrAyvH-tm8E)
