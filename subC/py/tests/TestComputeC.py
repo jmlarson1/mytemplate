@@ -3,7 +3,7 @@
 
 import unittest
 
-import mytemplate2.subC as mytC
+import mytemplate2.subC as myt2C
 
 
 class TestComputeC(unittest.TestCase):
@@ -14,4 +14,4 @@ class TestComputeC(unittest.TestCase):
         pass
 
     def testSomething(self):
-        self.assertEqual(9.0, mytC.compute_c(3.0))
+        self.assertEqual(9.0, myt2C.compute_c(3.0))

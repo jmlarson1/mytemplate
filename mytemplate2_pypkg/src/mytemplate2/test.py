@@ -1,6 +1,6 @@
 import unittest
 
-from mytemplate import load_tests
+from mytemplate2 import load_tests
 
 
 def test(verbosity=1):
