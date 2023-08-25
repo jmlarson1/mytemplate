@@ -9,8 +9,9 @@ General Information
 ===================
 
 This repository is a template and testbed for setting up new repositories in the
-[POptUS organization](https://github.com/POptUS).  All such repositories should
-satisify the following requirements
+[POptUS organization](https://github.com/POptUS).  A concrete example of such a repository is
+[IBCDFO](https://github.com/POptUS/IBCDFO/tree/main), which groups together similar optimization tools.
+All such repositories should satisify the following requirements
 
 * Each distinct tool to be included in the repository shall (e.g., [subA](https://github.com/jared321/mytemplate/tree/main/subA),
   [subB](https://github.com/jared321/mytemplate/tree/main/subB)) be included in the root of the repository in a folder named after the
