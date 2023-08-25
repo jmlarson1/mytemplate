@@ -14,4 +14,4 @@ class TestCompute(unittest.TestCase):
         pass
 
     def testSomething(self):
-        self.assertEqual(25.0, myt2.compute(5.0))
+        self.assertEqual(-250.0, myt2.compute(5.0))

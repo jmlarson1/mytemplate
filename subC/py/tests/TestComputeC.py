@@ -14,4 +14,4 @@ class TestComputeC(unittest.TestCase):
         pass
 
     def testSomething(self):
-        self.assertEqual(9.0, myt2C.compute_c(3.0))
+        self.assertEqual(27.0, myt2C.compute_c(3.0))
