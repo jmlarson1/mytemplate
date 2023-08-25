@@ -54,10 +54,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         pushd mytemplate_pypkg
-        tox -r -e coverage
+        tox -r -e coverage,coveralls
         popd
-        coveralls --service=github --basedir=/home/runner/work/mytemplate
-        coveralls --finish
 
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
