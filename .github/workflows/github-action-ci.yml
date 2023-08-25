@@ -53,9 +53,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        # We want to preserve all individual coverage results as artifacts.
+        # Therefore, save each of these to a unique file .coverage_<package name>
+        # Save all in root of repo for later aggregation.
         pushd mytemplate_pypkg
-        tox -r -e coverage
+        COVERAGE_FILE=../.coverage_mytemplate tox -r -e coverage
         popd
+        # This aggregates into .coverage for coveralls
         tox -r -e aggregate,coveralls,report -- ./.coverage_*
 
     - name: Archive code coverage results
