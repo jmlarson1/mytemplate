@@ -1,14 +1,11 @@
-Repository Status
-=================
+## Repository Status
 
 |             | Badges |
 |:-----------:|:------:|
 | General     | ![GitHub](https://img.shields.io/github/license/jared321/mytemplate) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) |
 | Test Status | ![GitHub Action CI](https://github.com/jared321/mytemplate/actions/workflows/github-action-ci.yml/badge.svg) [![Coverage Status](https://coveralls.io/repos/github/jared321/mytemplate/badge.svg?branch=main)](https://coveralls.io/github/jared321/mytemplate?branch=main) |
 
-General Information
-===================
-
+## General Information
 This repository is a template and testbed for setting up new repositories in the
 [POptUS organization](https://github.com/POptUS).  A concrete example of such a repository is
 [IBCDFO](https://github.com/POptUS/IBCDFO/tree/main), which groups together similar optimization tools.
@@ -54,9 +51,7 @@ All such repositories should satisify the following requirements
 * The repository shall be setup so that tested distributions of all python packages are available as
   [GitHub Action artifacts](https://github.com/jared321/mytemplate/actions/runs/5979755793).
 
-Developer Information
-=====================
-
+## Developer Information
 The python packages in this repository and the management of coverage reports
 for the full repository are managed with [tox](https://tox.wiki/en/latest/index.html),
 which can be used for CI work.  However, the same `tox` setups can be used by developers
@@ -98,8 +93,7 @@ For information on using `tox` with a particular python package refer to the
 `README.md` in the root folder of each package (e.g.,
 [mytemplate_pypkg](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/README.md)).
 
-Using `tox` for Global Coverage Tasks
-=====================================
+## Using `tox` for Global Coverage Tasks
 The python environments setup and managed at the root level of this repository are for working globally
 with all coverage results generated independently by testing individual code units in the repository.
 In particular, it can be used to combine these into a single file for generating global coverage reports.
@@ -128,3 +122,14 @@ Additionally, you can run any combination of the above such as
 tox -r -e report,coveralls,aggregate -- <coverage files>
 ```
 Note that `tox` will correctly and automatically run `aggregrate` before the others.
+
+## Adding a New Python Package
+* Add all subpackage implementations to the root of the repo in accord with the above requirements (e.g., [subA](https://github.com/jared321/mytemplate/tree/main/subA))
+* Create a new python package in the root of the repo by copying [mytemplate_pypkg](https://github.com/jared321/mytemplate/tree/main/mytemplate_pypkg)
+* Set `VERSION` to the desired starting version
+* Rewrite the `README.md` file for the new package
+* Adapt the contents of `tox.ini` to the new package
+* Adapt the contents of `setup.py` to the new package
+* Add in all subpackage implementations as symlinks in the correct subdirectory
+* Incorporate the package into the [GitHub CI Action](https://github.com/jared321/mytemplate/blob/main/.github/workflows/github-action-ci.yml)
+* Commit, push, and check associated GitHub CI Action log to see if constructed and integrated correctly
