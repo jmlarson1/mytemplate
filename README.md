@@ -99,3 +99,31 @@ For information on using `tox` with a particular python package refer to the
 
 Using `tox` for Global Coverage Tasks
 =====================================
+The python environments setup and managed at the root level of this repository are for working globally
+with all coverage results generated independently by testing individual code units in the repository.
+In particular, it can be used to combine these into a single file for generating global coverage reports.
+As such, this is a `tox` tool layer that requires advanced manual effort.  Its primary use is with CI for
+[automated report generation](https://github.com/jared321/mytemplate/blob/main/.github/workflows/github-action-ci.yml).
+
+To use this layer, learn about and setup `tox` as described above.
+
+No work will be carried out by default with the calls `tox` and `tox -r`.
+
+The following commands can be run from the directory that contains this file.
+* `tox -r -e aggregate -- <coverage files>`
+  * Combine all given `coverage.py` coverage files into the file `.coverage`
+  * For best results, none of the given files should be named `.coverage`
+  * Preserve the original coverage files
+* `tox -r -e report`
+  * It is intended that this be run after or with `aggregate`
+  * Generate a report and an HTML report for the aggregated coverage results
+* `tox -r -e coveralls`
+  * This is likely only useful for CI solutions
+  * It is intended that this be run after or with `aggregate`
+  * Send the aggegrated coverage report to Coveralls
+
+Additionally, you can run any combination of the above such as
+```
+tox -r -e report,coveralls,aggregate -- <coverage files>
+```
+Note that `tox` will correctly and automatically run `aggregrate` before the others.
