@@ -74,3 +74,20 @@ The following commands can be run from the directory that contains this file.
 
 In the interest of aiding developers, running `tox` or `tox -r` will only carry out the nocoverage work.
 Additionally, you can run any combination of the above such as `tox -r -e report,coverage`.
+
+## Manual Developer Testing
+===========================
+It is possible to test manually outside of `tox`, which could be useful for
+testing at the level of a single test.
+
+The following example shows how to run only `TestCompareA` in `mytemplate.subA`
+```
+$ cd /path/to/package
+$ tox -r -e nocoverage
+$ . ./.tox/nocoverage/bin/activate
+$ which python
+$ python --version
+$ pip list
+$ python -m unittest mytemplate.subA.test.TestCompareA
+```
+
