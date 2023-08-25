@@ -29,8 +29,8 @@ def main():
     command = ["coveralls",
                "--service=github",
                f"--basedir={base_dir}"]
-    subp.run(command)
-    subp.run(["coveralls", "--finish"])
+    sbp.run(command)
+    sbp.run(["coveralls", "--finish"])
     os.chdir(pwd)
 
     return 0
