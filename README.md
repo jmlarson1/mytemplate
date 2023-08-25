@@ -41,7 +41,7 @@ satisify the following requirements
   cloning the repository and setting appropriate path variables correctly based
   on the languages of each tool that they plan to use.
 * All public python packages shall be uploaded to [PyPi](https://pypi.org) so that users can choose
-  to use the code without having to clone the repository.
+  to use the code via installation with pip and without having to clone the repository.
 * The repository shall be setup so that all tests in the repository regardless
   of language can be run via a [GitHub CI Action](https://github.com/jared321/mytemplate/blob/main/.github/workflows/github-action-ci.yml)
   and potentially through a private build servers.
