@@ -3,6 +3,7 @@ Repository Status
 
 |             | Badges |
 |:-----------:|:------:|
+| General     | ![GitHub](https://img.shields.io/github/license/jared321/mytemplate) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) |
 | Test Status | ![GitHub Action CI](https://github.com/jared321/mytemplate/actions/workflows/github-action-ci.yml/badge.svg) [![Coverage Status](https://coveralls.io/repos/github/jared321/mytemplate/badge.svg?branch=main)](https://coveralls.io/github/jared321/mytemplate?branch=main) |
 
 General Information
