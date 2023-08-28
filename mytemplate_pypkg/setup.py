@@ -21,7 +21,7 @@ def version():
 # Changes made to python_requires should be propagated to all tox.ini and all
 # GitHub Action config files.
 python_requires = ">=3.7"
-code_requires = []
+code_requires = ["importlib-metadata;python_version<'3.8'"]
 test_requires = []
 install_requires = code_requires + test_requires
 

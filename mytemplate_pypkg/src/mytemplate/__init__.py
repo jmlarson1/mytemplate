@@ -1,11 +1,7 @@
 """
 """
 
-try:
-    from importlib.metadata import version
-except ModuleNotFoundError:
-    # Try backport
-    from importlib_metadata import version
+from importlib.metadata import version
 
 __version__ = version("mytemplate")
 
