@@ -2,7 +2,7 @@ from pathlib import Path
 
 from .subA import load_tests as load_tests_subA
 from .subB import load_tests as load_tests_subB
-from test import test
+from .test import test
 
 
 def load_tests(loader, suite, pattern):
@@ -41,7 +41,7 @@ def load_tests(loader, suite, pattern):
     )
     suites_all = load_tests_subA(loader, suites_all, pattern)
     suites_all = load_tests_subB(loader, suites_all, pattern)
-    test()
+    test
     print()
 
     return suites_all
