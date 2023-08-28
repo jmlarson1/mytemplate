@@ -1,7 +1,11 @@
 """
 """
 
-from importlib.metadata import version
+try:
+    from importlib.metadata import version
+except ImportError:
+    # Try backport
+    from importlib_metadata import version
 
 __version__ = version("mytemplate")
 
