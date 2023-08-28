@@ -4,8 +4,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      # python-versions must be maintained consistent with setup.py and all
+      # tox.ini configurations.
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
     steps:
     #####----- GENERAL SETUP STEPS
     - uses: actions/checkout@v3
@@ -38,7 +40,7 @@ jobs:
     - name: Test mytemplate python package
       run: |
         pushd mytemplate_pypkg
-        tox -r -e nocoverage
+        tox -r -e py-nocoverage
         popd
 
     - name: Archive tested mytemplate distributions
@@ -55,7 +57,7 @@ jobs:
     - name: Test mytemplate2 python package
       run: |
         pushd mytemplate2_pypkg
-        tox -r -e nocoverage
+        tox -r -e py-nocoverage
         popd
 
     - name: Archive tested mytemplate2 distributions
@@ -77,10 +79,10 @@ jobs:
         # Therefore, save each of these to a unique file .coverage_<package name>
         # Save all in root of repo for later aggregation.
         pushd mytemplate_pypkg
-        COVERAGE_FILE=../.coverage_mytemplate tox -r -e coverage
+        COVERAGE_FILE=../.coverage_mytemplate tox -r -e py-coverage
         popd
         pushd mytemplate2_pypkg
-        COVERAGE_FILE=../.coverage_mytemplate2 tox -r -e coverage
+        COVERAGE_FILE=../.coverage_mytemplate2 tox -r -e py-coverage
         popd
         # This aggregates into .coverage for coveralls
         tox -r -e aggregate,coveralls,report -- ./.coverage_*
