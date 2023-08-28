@@ -18,7 +18,9 @@ def version():
         return fptr.read().strip()
 
 
-python_requires = ">=3.7"
+# Changes made to python_requires should be propagated to all tox.ini and all
+# GitHub Action config files.
+python_requires = ">=3.9"
 code_requires = []
 test_requires = []
 install_requires = code_requires + test_requires
