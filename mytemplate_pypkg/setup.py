@@ -22,10 +22,12 @@ def version():
 # GitHub Action config files.
 python_requires = ">=3.7"
 code_requires = ["importlib-metadata;python_version<'3.8'"]
-test_requires = []
+test_requires = ["numpy"]
 install_requires = code_requires + test_requires
 
-package_data = {"mytemplate": []}
+package_data = {"mytemplate": ["tests/*.csv",
+                               "PkgData/*.json",
+                               "subA/tests/*.csv"]}
 
 project_urls = {
     "Source": "Git Hub",
