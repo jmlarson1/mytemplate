@@ -9,7 +9,7 @@
 This repository is a template and testbed for setting up new repositories in the
 [POptUS organization](https://github.com/POptUS).  A concrete example of such a repository is
 [IBCDFO](https://github.com/POptUS/IBCDFO/tree/main), which groups together similar optimization tools.
-All such repositories should satisify the following requirements
+All such repositories should satisfy the following requirements
 
 * Each distinct tool to be included in the repository shall (e.g., [subA](https://github.com/jared321/mytemplate/tree/main/subA),
   [subB](https://github.com/jared321/mytemplate/tree/main/subB)) be included in the root of the repository in a folder named after the
@@ -121,7 +121,7 @@ Additionally, you can run any combination of the above such as
 ```
 tox -r -e report,coveralls,aggregate -- <coverage files>
 ```
-Note that `tox` will correctly and automatically run `aggregrate` before the others.
+Note that `tox` will correctly and automatically run `aggregate` before the others.
 
 ## Adding a New Python Package
 * Add all subpackage implementations to the root of the repo in accord with the above requirements (e.g., [subA](https://github.com/jared321/mytemplate/tree/main/subA))
