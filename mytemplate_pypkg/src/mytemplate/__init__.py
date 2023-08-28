@@ -3,7 +3,7 @@
 
 try:
     from importlib.metadata import version
-except ImportError:
+except ModuleNotFoundError:
     # Try backport
     from importlib_metadata import version
 
