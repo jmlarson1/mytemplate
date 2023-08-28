@@ -33,7 +33,7 @@ All such repositories should satisfy the following requirements
   [here](https://packaging.python.org/guides/single-sourcing-package-version/#single-sourcing-the-version) for options.
   In this repo we use a dedicated [VERSION](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/VERSION) file coupled with
   [setup.py](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/setup.py)
-  and [`__init__.py`](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/src/mytemplate/__init__.py). 
+  and [`__init__.py`](https://github.com/jared321/mytemplate/blob/main/mytemplate_pypkg/src/mytemplate/__init__.py).
 * All python packages shall have integrated automatic unit testing that can be
   run within python via the command `<package>.test()` so that actual installations can be tested and test results can be recorded in jupyter notebooks for traceability.
 * Users of the code in the repository shall be able to use the code correctly by

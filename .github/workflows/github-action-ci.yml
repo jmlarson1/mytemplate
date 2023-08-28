@@ -88,6 +88,7 @@ jobs:
         # We want to preserve all individual coverage results as artifacts.
         # Therefore, save each of these to a unique file .coverage_<package name>
         # Save all in root of repo for later aggregation.
+        ./.github/workflows/setup_tox_github_action.sh
         pushd mytemplate_pypkg
         COVERAGE_FILE=../.coverage_mytemplate tox -r -e py-coverage
         popd
@@ -96,6 +97,11 @@ jobs:
         popd
         # This aggregates into .coverage for coveralls
         tox -r -e aggregate,coveralls,report -- ./.coverage_*
+
+        # Trying something
+        pip3 install --upgrade coveralls
+        coveralls --service=github
+        coveralls --finish
 
     ##-- Publish full coverage report as artifact
     - name: Archive code coverage results
@@ -127,4 +133,3 @@ jobs:
         path: |
           mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.whl
           mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.tar.gz
-

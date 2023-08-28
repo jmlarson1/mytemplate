@@ -40,7 +40,7 @@ $ pip list
 ```
 
 #### Installation Testing
-Installations can be tested by running 
+Installations can be tested by running
 ```
 $ python
 >>> import mytemplate
@@ -104,4 +104,3 @@ $ python --version
 $ pip list
 $ python -m unittest mytemplate.subA.test.TestCompareA
 ```
-
