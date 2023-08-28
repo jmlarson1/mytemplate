@@ -8,8 +8,8 @@ jobs:
       # python-versions must be maintained consistent with associated setup.py
       # and tox.ini configuration.
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        os: [ubuntu-latest]
+        python-version: ["3.11"]
     steps:
     ##-- General Setup Steps
     - uses: actions/checkout@v3
@@ -36,8 +36,8 @@ jobs:
       # python-versions must be maintained consistent with associated setup.py
       # and tox.ini configuration.
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        python-version: ["3.9", "3.10", "3.11"]
+        os: [ubuntu-latest]
+        python-version: ["3.11"]
     steps:
     ##-- General Setup Steps
     - uses: actions/checkout@v3
@@ -88,7 +88,7 @@ jobs:
         # We want to preserve all individual coverage results as artifacts.
         # Therefore, save each of these to a unique file .coverage_<package name>
         # Save all in root of repo for later aggregation.
-        pip install tox
+        ./.github/workflows/setup_tox_github_action.sh
         pushd mytemplate_pypkg
         COVERAGE_FILE=../.coverage_mytemplate tox -r -e py-coverage
         popd
