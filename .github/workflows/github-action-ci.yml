@@ -127,4 +127,3 @@ jobs:
         path: |
           mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.whl
           mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.tar.gz
-
