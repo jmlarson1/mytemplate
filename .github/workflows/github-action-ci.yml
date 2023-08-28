@@ -97,6 +97,11 @@ jobs:
         # This aggregates into .coverage for coveralls
         tox -r -e aggregate,coveralls,report -- ./.coverage_*
 
+        # Trying something
+        pip3 install --upgrade coveralls
+        coveralls --service=github
+        coveralls --finish
+
     ##-- Publish full coverage report as artifact
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
