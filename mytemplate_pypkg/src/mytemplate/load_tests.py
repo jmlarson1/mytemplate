@@ -41,7 +41,7 @@ def load_tests(loader, suite, pattern):
     )
     suites_all = load_tests_subA(loader, suites_all, pattern)
     suites_all = load_tests_subB(loader, suites_all, pattern)
-    test
+    print(dir(test))
     print()
 
     return suites_all
