@@ -1,5 +1,3 @@
-import unittest
-
 from pathlib import Path
 
 from .subC import load_tests as load_tests_subC
@@ -35,7 +33,9 @@ def load_tests(loader, suite, pattern):
     print()
     print(f"Discover tests in {start_dir}")
     suites_all = loader.discover(
-        start_dir=str(start_dir), top_level_dir=str(pkg_root), pattern="Test*.py"
+        start_dir=str(start_dir),
+        top_level_dir=str(pkg_root),
+        pattern="Test*.py"
     )
     suites_all = load_tests_subC(loader, suites_all, pattern)
     print()

@@ -71,6 +71,10 @@ The following commands can be run from the directory that contains this file.
 * `tox -r -e report`
   * It is intended that this be run after or with coverage
   * Generate a report and an HTML report for the package's full test suite
+* `tox -r -e check`
+  * This is likely only useful for developers working on a local clone
+  * This task should never call any tools that automatically __alter__ files
+  * Run several checks on the code to report possible issues
 * `tox -r -e format`
   * This is likely only useful for developers working on a local clone
   * Apply `black` to all files in the package for cleaning/standardization who want to diff the changes made by `black` before committing

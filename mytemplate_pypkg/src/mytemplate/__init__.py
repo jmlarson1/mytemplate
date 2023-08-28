@@ -8,9 +8,13 @@ except ModuleNotFoundError:
 
 __version__ = version("mytemplate")
 
+# constants
+from .constants import config
+
+# functions
 from .compute import compute
 
-#####----- Python unittest-based test framework
+# ----- Python unittest-based test framework
 # Used for automatic test discovery
 from .load_tests import load_tests
 
