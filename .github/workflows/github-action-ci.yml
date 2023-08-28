@@ -3,11 +3,12 @@ on: ["push", "pull_request"]
 jobs:
   #####----- MYTEMPLATE FULL TESTING OF INSTALLED PACKAGE WITHOUT COVERAGE
   test_mytemplate_ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       # python-versions must be maintained consistent with associated setup.py
       # and tox.ini configuration.
       matrix:
+        os: [ubuntu-latest, macos-latest]
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
     steps:
     ##-- General Setup Steps
