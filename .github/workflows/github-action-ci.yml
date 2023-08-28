@@ -1,15 +1,16 @@
 name: GitHub CI Action
 on: ["push", "pull_request"]
 jobs:
-  build:
+  #####----- MYTEMPLATE FULL TESTING OF INSTALLED PACKAGE WITHOUT COVERAGE
+  test_mytemplate_ubuntu:
     runs-on: ubuntu-latest
     strategy:
-      # python-versions must be maintained consistent with setup.py and all
-      # tox.ini configurations.
+      # python-versions must be maintained consistent with associated setup.py
+      # and tox.ini configuration.
       matrix:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
     steps:
-    #####----- GENERAL SETUP STEPS
+    ##-- General Setup Steps
     - uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python-version }}
@@ -34,41 +35,90 @@ jobs:
         echo
         pip list
 
-    #####----- MYTEMPLATE PYTHON PACKAGE STEPS
-    # Main test step is full test suite run on installed package with no
-    # coverage
+    ##-- Test Execution Step
     - name: Test mytemplate python package
       run: |
         pushd mytemplate_pypkg
         tox -r -e py-nocoverage
         popd
 
-    - name: Archive tested mytemplate distributions
-      uses: actions/upload-artifact@v3
-      with:
-        name: tested-mytemplate-packages
-        path: |
-          mytemplate_pypkg/.tox/.pkg/dist/mytemplate-*.whl
-          mytemplate_pypkg/.tox/.pkg/dist/mytemplate-*.tar.gz
+  #####----- MYTEMPLATE2 FULL TESTING OF INSTALLED PACKAGE WITHOUT COVERAGE
+  test_mytemplate2_ubuntu:
+    runs-on: ubuntu-latest
+    strategy:
+      # python-versions must be maintained consistent with associated setup.py
+      # and tox.ini configuration.
+      matrix:
+        python-version: ["3.9"]
+    steps:
+    ##-- General Setup Steps
+    - uses: actions/checkout@v3
 
-    #####----- MYTEMPLATE2 PYTHON PACKAGE STEPS
-    # Main test step is full test suite run on installed package with no
-    # coverage
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Setup python with tox
+      run: |
+        python -m pip install --upgrade pip
+        pip install --upgrade setuptools
+        pip install wheel
+        pip install tox
+        echo
+        which python
+        which pip
+        which tox
+        echo
+        python --version
+        pip --version
+        tox --version
+        echo
+        pip list
+
+    ##-- Test Execution Step
     - name: Test mytemplate2 python package
       run: |
         pushd mytemplate2_pypkg
         tox -r -e py-nocoverage
         popd
 
-    - name: Archive tested mytemplate2 distributions
-      uses: actions/upload-artifact@v3
-      with:
-        name: tested-mytemplate2-packages
-        path: |
-          mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.whl
-          mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.tar.gz
+  #####----- MEASURE COVERAGE ACROSS ALL PACKAGES
+  coverage_ubuntu:
+    runs-on: ubuntu-latest
+    strategy:
+      # We only need to measure coverage with a single python version, and we
+      # must pick a version that all packages include via tox.  Ideally this
+      # will be the latest version of python used in the action.
+      matrix:
+        python-version: ["3.9"]
+    steps:
+    ##-- General Setup Steps
+    - uses: actions/checkout@v3
 
-    #####----- FULL REPOSITORY STEPS
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Setup python with tox
+      run: |
+        python -m pip install --upgrade pip
+        pip install --upgrade setuptools
+        pip install wheel
+        pip install tox
+        echo
+        which python
+        which pip
+        which tox
+        echo
+        python --version
+        pip --version
+        tox --version
+        echo
+        pip list
+
+    ##-- Run Coverage for All Packages
     # Coverage is full test suite run on local clone so that coveralls
     # has nice output.  Generate html report to export as artifact.
     - name: Generate all coverage for coveralls
@@ -94,3 +144,20 @@ jobs:
         path: |
             .coverage*
             htmlcov
+
+    - name: Archive tested mytemplate distributions
+      uses: actions/upload-artifact@v3
+      with:
+        name: tested-mytemplate-packages
+        path: |
+          mytemplate_pypkg/.tox/.pkg/dist/mytemplate-*.whl
+          mytemplate_pypkg/.tox/.pkg/dist/mytemplate-*.tar.gz
+
+    - name: Archive tested mytemplate2 distributions
+      uses: actions/upload-artifact@v3
+      with:
+        name: tested-mytemplate2-packages
+        path: |
+          mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.whl
+          mytemplate2_pypkg/.tox/.pkg/dist/mytemplate2-*.tar.gz
+
